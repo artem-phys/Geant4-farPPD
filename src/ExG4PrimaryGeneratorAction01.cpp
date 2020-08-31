@@ -52,9 +52,13 @@ void ExG4PrimaryGeneratorAction01::GeneratePrimaries(G4Event* anEvent)
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(x,y,z));
 
   //Random-generated particle birth position in the source volume
-  G4double x0 = (2*G4UniformRand()-1)*0.03*m;
-  G4double y0 = (2*G4UniformRand()-1)*0.05*m;
-  G4double z0 = (2*G4UniformRand()-1)*0.005*m;
+  G4double x_pos = 0;
+  G4double y_pos = 0;
+  G4double z_pos = -8*cm;
+
+  G4double x0 = x_pos+(2*G4UniformRand()-1)*3*cm;
+  G4double y0 = y_pos+(2*G4UniformRand()-1)*5*cm;
+  G4double z0 = z_pos+(2*G4UniformRand()-1)*5*mm;
   fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
 
   //Primary event generation
