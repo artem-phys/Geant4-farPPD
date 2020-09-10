@@ -26,8 +26,8 @@
 //
 //
 
-#ifndef G4PSEnergyDeposit_h
-#define G4PSEnergyDeposit_h 1
+#ifndef ExG4EnergyDeposit_h
+#define ExG4EnergyDeposit_h 1
 
 #include "G4VPrimitiveScorer.hh"
 #include "G4THitsMap.hh"

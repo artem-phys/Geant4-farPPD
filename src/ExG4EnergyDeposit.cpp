@@ -26,8 +26,10 @@
 //
 //
 // G4PSEnergyDeposit
-#include "G4PSEnergyDeposit.hh"
+#include "ExG4EnergyDeposit.hh"
 #include "G4UnitsTable.hh"
+#include "G4SystemOfUnits.hh"
+
 ////////////////////////////////////////////////////////////////////////////////
 // Description:
 //   This is a primitive scorer class for scoring energy deposit.
@@ -55,11 +57,14 @@ ExG4EnergyDeposit::~ExG4EnergyDeposit()
 
 G4bool ExG4EnergyDeposit::ProcessHits(G4Step* aStep,G4TouchableHistory*)
 {
-  G4double edep = aStep->GetTotalEnergyDeposit();
-  if ( edep == 0. ) return FALSE;
-  edep *= aStep->GetPreStepPoint()->GetWeight(); // (Particle Weight)
-  G4int  index = GetIndex(aStep);
-  EvtMap->add(index,edep);  
+  G4Track * track = aStep->GetTrack();
+  G4double time = track->GetGlobalTime();
+
+
+  if (time > 2629743.83*s) 
+  {
+    track->SetTrackStatus(fStopAndKill);
+  }
   return TRUE;
 }
 

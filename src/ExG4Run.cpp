@@ -76,13 +76,3 @@ void ExG4Run::Merge(const G4Run* aRun)
   fSumDose    += localRun->fSumDose;
   G4Run::Merge(aRun);
 }
-
-/*G4bool G4PSEnergyDeposit::ProcessHits(G4Step* aStep,G4TouchableHistory*)
-{
-  G4double edep = aStep->GetTotalEnergyDeposit();
-  if ( edep == 0. ) return FALSE;
-  edep *= aStep->GetPreStepPoint()->GetWeight(); // (Particle Weight)
-  G4int  index = GetIndex(aStep);
-  EvtMap->add(index,edep);
-  return TRUE;
-}*/
