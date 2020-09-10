@@ -115,7 +115,7 @@ G4VPhysicalVolume* ExG4DetectorConstruction01::Construct()
   G4double dead_layer_thickness = 2*mm;               
   G4Tubs* solidDead = new G4Tubs("Dead", 0, det_R, 0.5*dead_layer_thickness,0,360.*deg);
   G4LogicalVolume* logicDead = new G4LogicalVolume(solidDead, det_mat, "Dead");
-  new G4PVPlacement(0, G4ThreeVector(0,0,-(det_H-dead_layer_thickness)/2), logicDead, "Dead", logicDet, false, 0, checkOverlaps);
+  //new G4PVPlacement(0, G4ThreeVector(0,0,-(det_H-dead_layer_thickness)/2), logicDead, "Dead", logicDet, false, 0, checkOverlaps);
 
 
   return physWorld;
