@@ -24,7 +24,7 @@ ExG4PrimaryGeneratorAction01::ExG4PrimaryGeneratorAction01()
   
   //Number of emitted particles
   G4int n_particle = 1;
-  fParticleGun  = new G4ParticleGun(n_particle);
+  fParticleGun = new G4ParticleGun(n_particle);
 
   //Set gamma as emitted ion
   ionTable = G4IonTable::GetIonTable();
