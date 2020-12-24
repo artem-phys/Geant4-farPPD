@@ -16,25 +16,26 @@
 
 
 
-ExG4PrimaryGeneratorAction01::ExG4PrimaryGeneratorAction01()
-: G4VUserPrimaryGeneratorAction(),
-  fParticleGun(0), 
+ExG4PrimaryGeneratorAction01::ExG4PrimaryGeneratorAction01(): G4VUserPrimaryGeneratorAction(),
+  fParticleGun(0),
   fEnvelopeBox(0)
-{
-  
+  {
   //Number of emitted particles
   G4int n_particle = 1;
-  fParticleGun = new G4ParticleGun(n_particle);
+  fParticleGun  = new G4ParticleGun(n_particle);
 
-  //Set gamma as emitted ion
-  ionTable = G4IonTable::GetIonTable();
-  ion = ionTable->FindIon(94, 241, 0);
-  fParticleGun->SetParticleDefinition(ion);
+  //Set gamma as emitted particle
+  G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+  G4String particleName;
+  G4ParticleDefinition* particle = particleTable->FindParticle(particleName="gamma");
+  fParticleGun->SetParticleDefinition(particle);
 
   //Set gamma Energy (Americium decay gamma)
-  G4double E = 0 *keV;
-  fParticleGun->SetParticleEnergy(E);
-}
+  G4double Am241E = 59.5409 * keV;
+  G4double U238E = 49.55 * keV;
+  G4double Th232E = 63.81 * keV;
+  fParticleGun->SetParticleEnergy(Am241E);
+  } 
 
 ExG4PrimaryGeneratorAction01::~ExG4PrimaryGeneratorAction01()
 {

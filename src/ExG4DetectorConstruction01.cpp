@@ -134,14 +134,9 @@ void ExG4DetectorConstruction01::ConstructSDandField()
   
   G4VPrimitiveScorer* primitiv1 = new G4PSEnergyDeposit("edep");
   GeDet->RegisterPrimitive(primitiv1);
-  SetSensitiveDetector("Detector",GeDet);
+  SetSensitiveDetector("Detector", GeDet);
 
   //Initialisisation of World volume as a MultiFunctionalDetector
   G4MultiFunctionalDetector* WorldDet = new G4MultiFunctionalDetector("World");
   G4SDManager::GetSDMpointer()->AddNewDetector(WorldDet);
-
-  //Add primitive scorers 
-  G4VPrimitiveScorer* primitiv2 = new ExG4EnergyDeposit("Gorshok");
-  WorldDet->RegisterPrimitive(primitiv2);
-  SetSensitiveDetector("Gorshok",WorldDet);
 }
