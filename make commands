@@ -1,9 +1,5 @@
-cmake -DGeant4_DIR=/home/artem/Geant4/geant4.10.06.p02-DEBUG-install /home/artem/Desktop/farPPD
-
-cmake -DGeant4_DIR=/home/artem/Geant4/geant4.10.06.p02-MT-install /home/artem/Desktop/farPPD
-
-cmake -DGeant4_DIR=/home/artem/Geant4/geant4.10.06.p02-install /home/artem/Desktop/farPPD
+cmake -DGeant4_DIR=/home/artem/Geant4/geant4.10.07-install /home/artem/Desktop/farPPD
 
 make -j4
 
-
+.\farPPD
