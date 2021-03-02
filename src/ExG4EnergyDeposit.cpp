@@ -42,7 +42,7 @@
 ExG4EnergyDeposit::ExG4EnergyDeposit(G4String name, G4int depth)
   :G4VPrimitiveScorer(name,depth),HCID(-1),EvtMap(0)
 {
-  SetUnit("MeV");
+  SetUnit("keV");
 }
 
 ExG4EnergyDeposit::ExG4EnergyDeposit(G4String name, const G4String& unit, 

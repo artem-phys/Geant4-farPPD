@@ -11,4 +11,5 @@
 /event/verbose 0
 /tracking/verbose 0
 
+/gun/energy 210 keV
 /run/beamOn 100000
