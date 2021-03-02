@@ -37,6 +37,7 @@ class ExG4Run : public G4Run
     G4int fGoodEvents;
     G4double fSumDose;
     G4StatAnalysis fStatDose;
+    G4int AllEvents;
 };
 
 #endif

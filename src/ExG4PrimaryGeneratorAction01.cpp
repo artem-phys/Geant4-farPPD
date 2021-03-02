@@ -9,16 +9,17 @@
 #include "G4Box.hh"
 #include "G4RunManager.hh"
 #include "G4ParticleGun.hh"
-#include "G4ParticleTable.hh"
+#include "G4IonTable.hh"
 #include "G4ParticleDefinition.hh"
 #include "G4SystemOfUnits.hh"
 #include "Randomize.hh"
 
-ExG4PrimaryGeneratorAction01::ExG4PrimaryGeneratorAction01()
-: G4VUserPrimaryGeneratorAction(),
-  fParticleGun(0), 
+
+
+ExG4PrimaryGeneratorAction01::ExG4PrimaryGeneratorAction01(): G4VUserPrimaryGeneratorAction(),
+  fParticleGun(0),
   fEnvelopeBox(0)
-{
+  {
   //Number of emitted particles
   G4int n_particle = 1;
   fParticleGun  = new G4ParticleGun(n_particle);
@@ -30,14 +31,18 @@ ExG4PrimaryGeneratorAction01::ExG4PrimaryGeneratorAction01()
   fParticleGun->SetParticleDefinition(particle);
 
   //Set gamma Energy (Americium decay gamma)
-  G4double E = 59.5409 *keV;
-  fParticleGun->SetParticleEnergy(E);
-}
+  G4double Am241E = 59.5409 * keV;
+  G4double U238E = 49.55 * keV;
+  G4double Th232E = 63.81 * keV;
+  fParticleGun->SetParticleEnergy(Am241E);
+  } 
 
 ExG4PrimaryGeneratorAction01::~ExG4PrimaryGeneratorAction01()
 {
   delete fParticleGun;
 }
+
+
 
 void ExG4PrimaryGeneratorAction01::GeneratePrimaries(G4Event* anEvent)
 {

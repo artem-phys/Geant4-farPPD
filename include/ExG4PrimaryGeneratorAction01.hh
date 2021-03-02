@@ -11,6 +11,8 @@
 #include "G4ParticleGun.hh"
 #include "globals.hh"
 
+#include "G4IonTable.hh"
+
 class G4ParticleGun;
 class G4Event;
 class G4Box;
@@ -31,5 +33,7 @@ class ExG4PrimaryGeneratorAction01 : public G4VUserPrimaryGeneratorAction
     G4ParticleGun*  fParticleGun; // указатель на источник частиц
     // Временная переменная объема
     G4Box* fEnvelopeBox;
+    G4IonTable* ionTable;
+    G4ParticleDefinition* ion;
 };
 #endif

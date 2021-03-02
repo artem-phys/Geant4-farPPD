@@ -6,9 +6,10 @@
 # Initialize kernel
 /run/initialize
 #
-/control/verbose 2
-/run/verbose 2
+/control/verbose 0
+/run/verbose 0
 /event/verbose 0
-/tracking/verbose 1
+/tracking/verbose 0
 
-/run/beamOn 10000
+/gun/energy 210 keV
+/run/beamOn 100000

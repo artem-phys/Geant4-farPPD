@@ -18,6 +18,8 @@
 #include "G4VisAttributes.hh"
 #include "G4UnionSolid.hh"
 #include "G4SubtractionSolid.hh"
+#include "ExG4EnergyDeposit.hh"
+
 
 ExG4DetectorConstruction01::ExG4DetectorConstruction01()
 : G4VUserDetectorConstruction()
@@ -112,7 +114,7 @@ G4VPhysicalVolume* ExG4DetectorConstruction01::Construct()
   new G4PVPlacement(0, G4ThreeVector(0,0,-2.6*cm), logicDet, "Detector", logicCryochamber, false, 0, checkOverlaps);
 
   // DEAD LAYER   
-  G4double dead_layer_thickness = 2*mm;               
+  G4double dead_layer_thickness = 0.5*mm;               
   G4Tubs* solidDead = new G4Tubs("Dead", 0, det_R, 0.5*dead_layer_thickness,0,360.*deg);
   G4LogicalVolume* logicDead = new G4LogicalVolume(solidDead, det_mat, "Dead");
   new G4PVPlacement(0, G4ThreeVector(0,0,-(det_H-dead_layer_thickness)/2), logicDead, "Dead", logicDet, false, 0, checkOverlaps);
@@ -129,8 +131,12 @@ void ExG4DetectorConstruction01::ConstructSDandField()
   G4MultiFunctionalDetector* GeDet = new G4MultiFunctionalDetector("Detector");
   G4SDManager::GetSDMpointer()->AddNewDetector(GeDet);
 
-  //Add primitive scorers
+  
   G4VPrimitiveScorer* primitiv1 = new G4PSEnergyDeposit("edep");
   GeDet->RegisterPrimitive(primitiv1);
-  SetSensitiveDetector("Detector",GeDet);
+  SetSensitiveDetector("Detector", GeDet);
+
+  //Initialisisation of World volume as a MultiFunctionalDetector
+  G4MultiFunctionalDetector* WorldDet = new G4MultiFunctionalDetector("World");
+  G4SDManager::GetSDMpointer()->AddNewDetector(WorldDet);
 }

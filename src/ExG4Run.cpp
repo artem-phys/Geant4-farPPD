@@ -23,7 +23,8 @@ ExG4Run::ExG4Run()
    fPrintModulo(10000),
    fGoodEvents(0),
    fSumDose(0.),
-   fStatDose()
+   fStatDose(),
+   AllEvents(100000)
 { }
 
 ExG4Run::~ExG4Run()
@@ -33,14 +34,16 @@ void ExG4Run::RecordEvent(const G4Event* event)
 {
   if ( fCollID_cryst < 0 ) {
    fCollID_cryst 
-     = G4SDManager::GetSDMpointer()->GetCollectionID("Detector/edep");
-   G4cout << " fCollID_cryst: " << fCollID_cryst << G4endl;   
+     = G4SDManager::GetSDMpointer()->GetCollectionID("Detector/edep"); 
   }
 
   G4int evtNb = event->GetEventID();
   
+  //Progress bar
   if (evtNb%fPrintModulo == 0) { 
     G4cout << G4endl << "---> end of event: " << evtNb << G4endl;
+    G4double Progress = evtNb/AllEvents;
+    G4cout << G4endl << "Progress " << Progress << G4endl;
   }      
   
   //Hits collections
@@ -61,7 +64,7 @@ void ExG4Run::RecordEvent(const G4Event* event)
     G4double edep = *(itr->second);
     if (edep > eThreshold) nbOfFired++;
     G4int copyNb  = (itr->first);
-    G4cout << G4endl << "  cryst" << copyNb << ": " << edep/keV << " keV ";
+    //G4cout << G4endl << "  cryst" << copyNb << ": " << edep/keV << " keV ";
   }  
   if (nbOfFired == 2) fGoodEvents++;
   
