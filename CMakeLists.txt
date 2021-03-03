@@ -51,6 +51,7 @@ target_link_libraries(farPPD ${Geant4_LIBRARIES})
 set(EXAMPLE1_SCRIPTS
   run.mac
   vis.mac
+  MyRun.mac
   )
 
 foreach(_script ${EXAMPLE1_SCRIPTS})

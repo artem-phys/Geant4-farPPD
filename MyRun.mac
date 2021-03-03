@@ -1,0 +1,6 @@
+# Macro file for farPPD
+
+/gun/energy {eKin} keV
+/run/beamOn 100000
+
+/control/shell mv scoring.root scoring_{eKin}.root

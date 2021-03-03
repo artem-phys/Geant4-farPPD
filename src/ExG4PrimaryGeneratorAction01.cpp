@@ -1,4 +1,4 @@
-﻿/* This file is a part of a GEANT4 model of farPPD at BNO */
+/* This file is a part of a GEANT4 model of farPPD at BNO */
 /* Creator: Artem, lab assistant of Low Backgound Measurement Laboatory, PNPI */
 
 /// \file ExG4PrimaryGeneratorAction01.cpp

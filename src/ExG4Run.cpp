@@ -41,9 +41,7 @@ void ExG4Run::RecordEvent(const G4Event* event)
   
   //Progress bar
   if (evtNb%fPrintModulo == 0) { 
-    G4cout << G4endl << "---> end of event: " << evtNb << G4endl;
-    G4double Progress = evtNb/AllEvents;
-    G4cout << G4endl << "Progress " << Progress << G4endl;
+    G4cout << G4endl << "Progress " << evtNb << "/" << AllEvents << G4endl;
   }      
   
   //Hits collections
@@ -53,7 +51,7 @@ void ExG4Run::RecordEvent(const G4Event* event)
                
   //Energy in crystals : identify 'good events'
   //
-  const G4double eThreshold = 5*keV;
+  const G4double eThreshold = 1*keV;
   G4int nbOfFired = 0;
    
   G4THitsMap<G4double>* evtMap = 

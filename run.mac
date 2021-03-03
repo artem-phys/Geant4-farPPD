@@ -11,5 +11,4 @@
 /event/verbose 0
 /tracking/verbose 0
 
-/gun/energy 210 keV
-/run/beamOn 100000
+/control/loop MyRun.mac eKin 0 2700 300
