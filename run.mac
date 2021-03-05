@@ -11,4 +11,4 @@
 /event/verbose 0
 /tracking/verbose 0
 
-/control/loop MyRun.mac eKin 0 2700 300
+/control/loop MyRun.mac eKin 0 200 5

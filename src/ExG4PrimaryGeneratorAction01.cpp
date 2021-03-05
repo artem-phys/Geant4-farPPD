@@ -5,8 +5,6 @@
 /// \brief Implementation of the ExG4PrimaryGeneratorAction01 class
 
 #include "ExG4PrimaryGeneratorAction01.hh"
-#include "G4LogicalVolume.hh"
-#include "G4Box.hh"
 #include "G4RunManager.hh"
 #include "G4ParticleGun.hh"
 #include "G4IonTable.hh"

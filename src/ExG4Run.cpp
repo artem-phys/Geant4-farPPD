@@ -24,7 +24,7 @@ ExG4Run::ExG4Run()
    fGoodEvents(0),
    fSumDose(0.),
    fStatDose(),
-   AllEvents(100000)
+   AllEvents(10000000)
 { }
 
 ExG4Run::~ExG4Run()

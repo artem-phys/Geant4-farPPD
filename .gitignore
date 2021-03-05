@@ -1,3 +1,5 @@
 .vscode/c_cpp_properties.json
 .vscode/settings.json
 CMakeLists.txt.user
+src/.vscode/c_cpp_properties.json
+src/.vscode/c_cpp_properties.json
