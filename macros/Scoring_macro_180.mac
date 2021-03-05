@@ -1,0 +1,8 @@
+/run/initialize 
+ 	/control/verbose
+	/run/verbose 0 
+	/event/verbose 0
+	/tracking/verbose 0
+	/gun/energy 180 keV 
+	/run/beamOn 10000000
+	/control/shell mv scoring.root scoring_180.root 
