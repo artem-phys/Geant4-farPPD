@@ -26,3 +26,6 @@ A slight dead layer, that is not sensitive in the detector, present in this mode
 ![Tracks](/Photos/Tracks.jpg)
 
 Simulation data scores in a ROOT file for further analysis
+
+
+![Ey](/Photos/FarPPD_sensitivity.png)
