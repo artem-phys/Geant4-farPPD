@@ -21,8 +21,8 @@ The sample is contaminated with americium, and thus, isotropically emits gamma p
 The decsription of particle generations is located in ExG4PrimaryGeneratorAction01.cpp
 
 If you run the project without command line args, the visualisation starts:
-![Vis](https://github.com/artem-phys/Geant4-farPPD/raw/master/Visualisation/Visualisation.jpg)
+![Vis](/Photos/Visualisation.jpg)
 A slight dead layer, that is not sensitive in the detector, present in this modeling. Also, you can see tracks of the particles in the following screenshot:
-![Tracks](https://github.com/artem-phys/Geant4-farPPD/raw/master/Visualisation/Tracks.jpg)
+![Tracks](/Photos/Tracks.jpg)
 
 Simulation data scores in a ROOT file for further analysis
