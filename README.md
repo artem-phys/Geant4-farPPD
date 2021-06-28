@@ -1,6 +1,8 @@
 # Geant4-farPPD
 Geant4 Monte Carlo simulation for farPPD detector in Baksano Neutrino Observatory
 
+Detailed review and entire diploma project: https://github.com/artem-phys/TmCryst
+
 
 The farPPD facility is located in BNO and looks as shown in the photo:
 
